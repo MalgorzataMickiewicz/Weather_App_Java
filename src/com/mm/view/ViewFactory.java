@@ -3,7 +3,6 @@ package com.mm.view;
 import com.mm.controller.AbstractController;
 import com.mm.controller.MainWindowController;
 import com.mm.controller.OptionsWindowController;
-import com.mm.controller.ApiConntection;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -49,8 +48,8 @@ public class ViewFactory {
     }
 
     public void showApiResult() throws IOException {
-        ApiConntection api = new ApiConntection();
-        api.sendGET();
+        // ApiConntection api = new ApiConntection();
+        // api.sendGET();
     }
 
     private void initializeStage(AbstractController controller) {
