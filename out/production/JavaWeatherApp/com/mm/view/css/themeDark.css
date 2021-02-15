@@ -7,7 +7,7 @@
     -fx-font-weight: bold;
 }
 
-Button, Label, ChoiceBox, Slider {
+Button, Label, ChoiceBox, Slider, Text {
     -fx-text-fill: white;
 }
 

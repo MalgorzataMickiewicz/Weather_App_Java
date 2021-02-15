@@ -2,86 +2,84 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="627.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="680.0" prefWidth="800.0" stylesheets="@css/themeDark.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="50.0" layoutY="54.0" text="Wybierz miasto:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="54.0" />
-      <Label layoutX="354.0" layoutY="54.0" text="Wybierz miasto:" AnchorPane.rightAnchor="167.0" AnchorPane.topAnchor="54.0" />
-      <Separator layoutX="305.0" layoutY="43.0" orientation="VERTICAL" prefHeight="457.0" prefWidth="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="38.0" />
-      <Label fx:id="LabelFirstCountry1" layoutX="249.0" layoutY="14.0" text="Twoja Pogoda" AnchorPane.topAnchor="10.0" />
-      <Separator layoutX="47.0" layoutY="38.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
-      <Separator layoutX="-3.0" layoutY="112.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="112.0" />
-      <Text fx:id="temperatureFirst1" layoutX="93.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionFirst1" layoutX="137.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <MenuBar layoutY="6.0" prefHeight="33.0" prefWidth="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Settings">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#optionsAction" text="Options" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <TextField fx:id="firstCityField" layoutX="50.0" layoutY="82.0" />
-      <Button layoutX="223.0" layoutY="82.0" mnemonicParsing="false" onAction="#firstCitySearch" text="Szukaj" />
-      <Label layoutX="43.0" layoutY="117.0" text="Dziś: " />
-      <Label layoutX="43.0" layoutY="286.0" text="Jutro" />
-      <Label layoutX="48.0" layoutY="368.0" text="Po jutrze" />
-      <Label layoutX="47.0" layoutY="457.0" text="Za 3 dni: " />
-      <Label layoutX="48.0" layoutY="535.0" text="Za 4 dni:" />
-      <Text fx:id="temperatureFirst2" layoutX="69.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionFirst2" layoutX="134.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureFirst3" layoutX="69.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionFirst3" layoutX="132.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureFirst4" layoutX="69.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionFirst4" layoutX="130.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureFirst5" layoutX="64.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionFirst5" layoutX="128.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureFirst12" layoutX="94.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureFirst22" layoutX="68.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureFirst32" layoutX="68.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureFirst42" layoutX="69.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureFirst52" layoutX="64.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionFirst12" layoutX="137.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionFirst52" layoutX="128.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionFirst22" layoutX="132.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionFirst32" layoutX="132.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionFirst42" layoutX="128.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <TextField fx:id="secondCityField" layoutX="354.0" layoutY="82.0" />
-      <Button layoutX="524.0" layoutY="82.0" mnemonicParsing="false" onAction="#secondCitySearch" text="Szukaj" />
-      <Text fx:id="temperatureSecond1" layoutX="362.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionSecond1" layoutX="431.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Label layoutX="337.0" layoutY="117.0" text="Dziś: " />
-      <Label layoutX="337.0" layoutY="184.0" text="Jutro" />
-      <Label layoutX="342.0" layoutY="266.0" text="Po jutrze" />
-      <Label layoutX="345.0" layoutY="353.0" text="Za 3 dni: " />
-      <Label layoutX="346.0" layoutY="431.0" text="Za 4 dni:" />
-      <Text fx:id="temperatureSecond2" layoutX="363.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionSecond2" layoutX="428.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureSecond3" layoutX="363.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionSecond3" layoutX="426.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureSecond4" layoutX="367.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionSecond4" layoutX="428.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureSecond5" layoutX="362.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionSecond5" layoutX="426.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="temperatureSecond12" layoutX="363.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureSecond22" layoutX="362.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureSecond32" layoutX="362.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureSecond42" layoutX="367.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="temperatureSecond52" layoutX="362.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
-      <Text fx:id="descriptionSecond12" layoutX="431.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionSecond52" layoutX="426.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionSecond22" layoutX="426.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionSecond32" layoutX="426.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Text fx:id="descriptionSecond42" layoutX="426.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
-      <Label fx:id="image1" layoutX="10.0" layoutY="144.0" />
-      <Label fx:id="image12" layoutX="24.0" layoutY="192.0" text="Label" />
+      <Label layoutX="97.0" layoutY="11.0" text="Wybierz miasto:" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="10.0" />
+      <Label layoutX="511.0" layoutY="11.0" text="Wybierz miasto:" AnchorPane.rightAnchor="204.0" AnchorPane.topAnchor="11.0" />
+      <Separator layoutX="-3.0" layoutY="73.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
+      <Text fx:id="temperatureFirst1" fill="WHITE" layoutX="155.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="100.0" />
+      <Text fx:id="descriptionFirst1" fill="WHITE" layoutX="203.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="100.0" />
+      <TextField fx:id="firstCityField" layoutX="100.0" layoutY="35.0" text="dasdas" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="35.0" />
+      <Button layoutX="273.0" layoutY="35.0" mnemonicParsing="false" onAction="#firstCitySearch" text="Szukaj" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="35.0" />
+      <Label layoutX="12.0" layoutY="117.0" text="Dziś: " AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="140.0" />
+      <Label layoutY="227.0" text="Jutro:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="260.0" />
+      <Label layoutX="6.0" layoutY="339.0" text="Po jutrze:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="380.0" />
+      <Label layoutX="6.0" layoutY="470.0" text="Za 3 dni: " AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="500.0" />
+      <Label layoutX="5.0" layoutY="588.0" text="Za 4 dni:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="620.0" />
+      <Text fx:id="temperatureFirst2" fill="WHITE" layoutX="154.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="220.0" />
+      <Text fx:id="descriptionFirst2" fill="WHITE" layoutX="194.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="220.0" />
+      <Text fx:id="temperatureFirst3" fill="WHITE" layoutX="157.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="340.0" />
+      <Text fx:id="descriptionFirst3" fill="WHITE" layoutX="197.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="340.0" />
+      <Text fx:id="temperatureFirst4" fill="WHITE" layoutX="155.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="460.0" />
+      <Text fx:id="descriptionFirst4" fill="WHITE" layoutX="195.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="460.0" />
+      <Text fx:id="temperatureFirst5" fill="WHITE" layoutX="154.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="580.0" />
+      <Text fx:id="descriptionFirst5" fill="WHITE" layoutX="194.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="580.0" />
+      <Text fx:id="temperatureFirst12" fill="WHITE" layoutX="159.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="160.0" />
+      <Text fx:id="temperatureFirst22" fill="WHITE" layoutX="154.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="280.0" />
+      <Text fx:id="temperatureFirst32" fill="WHITE" layoutX="157.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="400.0" />
+      <Text fx:id="temperatureFirst42" fill="WHITE" layoutX="161.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="520.0" />
+      <Text fx:id="temperatureFirst52" fill="WHITE" layoutX="154.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="640.0" />
+      <Text fx:id="descriptionFirst12" fill="WHITE" layoutX="203.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="160.0" />
+      <Text fx:id="descriptionFirst52" fill="WHITE" layoutX="194.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="280.0" />
+      <Text fx:id="descriptionFirst22" fill="WHITE" layoutX="194.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="400.0" />
+      <Text fx:id="descriptionFirst32" fill="WHITE" layoutX="197.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="520.0" />
+      <Text fx:id="descriptionFirst42" fill="WHITE" layoutX="194.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="620.0" />
+      <TextField fx:id="secondCityField" layoutX="511.0" layoutY="35.0" />
+      <Button layoutX="682.0" layoutY="35.0" mnemonicParsing="false" onAction="#secondCitySearch" text="Szukaj" />
+      <Text fx:id="temperatureSecond1" layoutX="519.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="descriptionSecond1" layoutX="588.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Label layoutX="494.0" layoutY="118.0" text="Dziś: " />
+      <Label layoutX="494.0" layoutY="185.0" text="Jutro" />
+      <Label layoutX="500.0" layoutY="271.0" text="Po jutrze" />
+      <Label layoutX="503.0" layoutY="358.0" text="Za 3 dni: " />
+      <Label layoutX="504.0" layoutY="436.0" text="Za 4 dni:" />
+      <Text fx:id="temperatureSecond2" layoutX="520.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="descriptionSecond2" layoutX="585.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="temperatureSecond3" layoutX="521.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="descriptionSecond3" layoutX="584.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="temperatureSecond4" layoutX="525.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="descriptionSecond4" layoutX="586.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="temperatureSecond5" layoutX="520.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="descriptionSecond5" layoutX="584.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="temperatureSecond12" layoutX="520.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="temperatureSecond22" layoutX="519.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="temperatureSecond32" layoutX="520.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="temperatureSecond42" layoutX="525.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="temperatureSecond52" layoutX="520.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 oC" />
+      <Text fx:id="descriptionSecond12" layoutX="588.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="descriptionSecond52" layoutX="584.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="descriptionSecond22" layoutX="583.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="descriptionSecond32" layoutX="584.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Text fx:id="descriptionSecond42" layoutX="584.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opad: Deszcz" />
+      <Label fx:id="imageFirst1" layoutX="71.0" layoutY="84.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="90.0" />
+      <Label fx:id="imageFirst12" layoutX="71.0" layoutY="131.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="150.0" />
+      <Label fx:id="imageFirst2" layoutX="68.0" layoutY="197.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="210.0" />
+      <Label fx:id="imageFirst22" layoutX="68.0" layoutY="249.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="270.0" />
+      <Label fx:id="imageFirst3" layoutX="68.0" layoutY="317.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="330.0" />
+      <Label fx:id="imageFirst32" layoutX="68.0" layoutY="371.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="390.0" />
+      <Label fx:id="imageFirst4" layoutX="68.0" layoutY="444.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="450.0" />
+      <Label fx:id="imageFirst42" layoutX="69.0" layoutY="498.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="510.0" />
+      <Label fx:id="imageFirst5" layoutX="71.0" layoutY="571.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="570.0" />
+      <Label fx:id="imageFirst52" layoutX="71.0" layoutY="623.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="630.0" />
+      <Separator layoutX="156.0" layoutY="184.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+      <Separator layoutX="157.0" layoutY="297.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="320.0" />
+      <Separator layoutX="150.0" layoutY="424.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="440.0" />
+      <Separator layoutX="157.0" layoutY="545.0" prefHeight="5.0" prefWidth="549.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="560.0" />
+      <Separator layoutX="375.0" orientation="VERTICAL" prefHeight="636.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>
