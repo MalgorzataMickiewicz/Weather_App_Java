@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mm.view.ViewFactory;
 
-import com.mm.view.WeatherIcon;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -19,24 +18,6 @@ import java.util.ResourceBundle;
 public class MainWindowController extends AbstractController implements Initializable {
 
     private String query;
-    private WeatherIcon weatherIcon = WeatherIcon.DEFAULT;
-
-    public WeatherIcon getWeatherIcon() {
-        return weatherIcon;
-    }
-
-    public void setWeatherIcon(WeatherIcon weatherIcon) {
-        this.weatherIcon = weatherIcon;
-    }
-
-    @FXML
-    private Label image1;
-
-    @FXML
-    private Label image12;
-
-    @FXML
-    private Label LabelFirstCountry1;
 
     @FXML
     private Text temperatureFirst1;
@@ -164,6 +145,35 @@ public class MainWindowController extends AbstractController implements Initiali
     @FXML
     private Text descriptionSecond42;
 
+    @FXML
+    private Label imageFirst1;
+
+    @FXML
+    private Label imageFirst12;
+
+    @FXML
+    private Label imageFirst2;
+
+    @FXML
+    private Label imageFirst22;
+
+    @FXML
+    private Label imageFirst3;
+
+    @FXML
+    private Label imageFirst32;
+
+    @FXML
+    private Label imageFirst4;
+
+    @FXML
+    private Label imageFirst42;
+
+    @FXML
+    private Label imageFirst5;
+
+    @FXML
+    private Label imageFirst52;
 
     @FXML
     void firstCitySearch() throws IOException {
@@ -369,13 +379,7 @@ public class MainWindowController extends AbstractController implements Initiali
     }
 
     @FXML
-    void optionsAction() {
-        viewFactory.showOptionsWindow();
-    }
-
-    @FXML
     void secondCitySearch() {
-
     }
 
     public MainWindowController(ViewFactory viewFactory, String fxmlName) {
@@ -388,6 +392,49 @@ public class MainWindowController extends AbstractController implements Initiali
     }
 
     private void editApiResult(String result) {
+
+        String tableOfIcons [] = new String [40];
+        tableOfIcons[0] = "1";
+        tableOfIcons[1] = "2";
+        tableOfIcons[2] = "3";
+        tableOfIcons[3] = "4";
+        tableOfIcons[4] = "5";
+        tableOfIcons[5] = "6";
+        tableOfIcons[6] = "7";
+        tableOfIcons[7] = "8";
+        tableOfIcons[8] = "11";
+        tableOfIcons[9] = "12";
+        tableOfIcons[10] = "13";
+        tableOfIcons[11] = "14";
+        tableOfIcons[12] = "15";
+        tableOfIcons[13] = "16";
+        tableOfIcons[14] = "17";
+        tableOfIcons[15] = "18";
+        tableOfIcons[16] = "19";
+        tableOfIcons[17] = "20";
+        tableOfIcons[18] = "21";
+        tableOfIcons[19] = "22";
+        tableOfIcons[20] = "23";
+        tableOfIcons[21] = "24";
+        tableOfIcons[22] = "25";
+        tableOfIcons[23] = "26";
+        tableOfIcons[24] = "29";
+        tableOfIcons[25] = "30";
+        tableOfIcons[26] = "31";
+        tableOfIcons[27] = "32";
+        tableOfIcons[28] = "33";
+        tableOfIcons[29] = "34";
+        tableOfIcons[30] = "35";
+        tableOfIcons[31] = "36";
+        tableOfIcons[32] = "37";
+        tableOfIcons[33] = "38";
+        tableOfIcons[34] = "39";
+        tableOfIcons[35] = "40";
+        tableOfIcons[36] = "41";
+        tableOfIcons[37] = "42";
+        tableOfIcons[38] = "43";
+        tableOfIcons[39] = "44";
+
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
@@ -424,23 +471,22 @@ public class MainWindowController extends AbstractController implements Initiali
                 // Value of object
                 JsonNode day = array.get("Day");
                 JsonNode dayDescriptionObject = day.get("IconPhrase");
-                String dayDescriptionString = dayDescriptionObject.toString();
+                String dayDescriptionString = (dayDescriptionObject.toString()).replace("\"", "");
                 tableDescriptionDay[i] = dayDescriptionString;
-                // Icon
-                JsonNode dayIconObject = day.get("PrecipitationType");
+                // Icon number
+                JsonNode dayIconObject = day.get("Icon");
                 String dayIconString = dayIconObject.toString();
                 tableIconDay[i] = dayIconString;
                 // Night description
                 // Value of object
                 JsonNode night = array.get("Night");
                 JsonNode nightDescriptionObject = night.get("IconPhrase");
-                String nightDescriptionString = nightDescriptionObject.toString();
+                String nightDescriptionString = (nightDescriptionObject.toString()).replace("\"", "");
                 tableDescriptionNight[i] = nightDescriptionString;
-                // Icon
-                JsonNode nightIconObject = night.get("PrecipitationType");
+                // Icon number
+                JsonNode nightIconObject = night.get("Icon");
                 String nightIconString = nightIconObject.toString();
-                String nightIconStringWithoutQuote = nightIconString.replace("\"", "");
-                tableIconNight[i] = nightIconStringWithoutQuote;
+                tableIconNight[i] = nightIconString;
             }
             // add values to fields
             // Maximum temperature
@@ -468,19 +514,50 @@ public class MainWindowController extends AbstractController implements Initiali
             descriptionFirst42.setText(tableDescriptionNight[3]);
             descriptionFirst52.setText(tableDescriptionNight[4]);
             // Day Icon
-
-            // Night Icon
-            ImageView imageView;
-            String tabletest [] = new String [1];
-            tabletest[0] = "Snow";
-            String tableOfIcons [] = new String [13];
-            tableOfIcons[0] = "";
+            String tableOfIconReusltDay [] = new String[5];
             for(int j = 0; j < 5; j++) {
-                if(tableIconNight[0].equals(tabletest[0])) {
-                    imageView = new ImageView(getClass().getResource("weathericons/SNOW.png").toExternalForm());
-                    image1.setGraphic(imageView);
+                for(int k = 0; k < 40; k++){
+                    if(tableIconDay[j].equals(tableOfIcons[k])) {
+                        tableOfIconReusltDay[j] = tableOfIcons[k];
+                        break;
+                    }
                 }
             }
+            // Night Icon
+            String tableOfIconReusltNight [] = new String[5];
+            for(int j = 0; j < 5; j++) {
+                for(int k = 0; k < 40; k++){
+                    if(tableIconNight[j].equals(tableOfIcons[k])) {
+                        tableOfIconReusltNight[j] = tableOfIcons[k];
+                        break;
+                    }
+                }
+            }
+
+            ImageView imageView;
+            // Day Icon
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[0] + ".png").toExternalForm());
+            imageFirst1.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[1] + ".png").toExternalForm());
+            imageFirst2.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[2] + ".png").toExternalForm());
+            imageFirst3.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[3] + ".png").toExternalForm());
+            imageFirst4.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[4] + ".png").toExternalForm());
+            imageFirst5.setGraphic(imageView);
+            // Night Icon
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[0] + ".png").toExternalForm());
+            imageFirst12.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[1] + ".png").toExternalForm());
+            imageFirst22.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[2] + ".png").toExternalForm());
+            imageFirst32.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[3] + ".png").toExternalForm());
+            imageFirst42.setGraphic(imageView);
+            imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[4] + ".png").toExternalForm());
+            imageFirst52.setGraphic(imageView);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
