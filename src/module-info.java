@@ -10,4 +10,5 @@ module JavaWeatherApp {
     opens com.mm;
     opens com.mm.view;
     opens com.mm.controller;
+    opens com.mm.model;
 }
