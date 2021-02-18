@@ -1,11 +1,11 @@
 package com.mm.view;
 
 import com.mm.controller.AbstractController;
+import com.mm.controller.ApiConnection;
 import com.mm.controller.MainWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,11 +22,6 @@ public class ViewFactory {
     public void showMainWindow() {
         AbstractController controller = new MainWindowController(this, "MainWindow.fxml");
         initializeStage(controller);
-    }
-
-    public void showApiResult() throws IOException {
-        // ApiConntection api = new ApiConntection();
-        // api.sendGET();
     }
 
     private void initializeStage(AbstractController controller) {

@@ -15,6 +15,5 @@ public class Launcher<parameters, inputLine> extends Application {
     public void start(Stage stage) throws Exception {
         ViewFactory viewFactory = new ViewFactory();
         viewFactory.showMainWindow();
-        viewFactory.updateStyles();
     }
 }
