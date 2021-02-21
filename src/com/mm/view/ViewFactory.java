@@ -1,7 +1,6 @@
 package com.mm.view;
 
 import com.mm.controller.AbstractController;
-import com.mm.controller.ApiConnection;
 import com.mm.controller.MainWindowController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -39,18 +38,6 @@ public class ViewFactory {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-    }
-
-    public void updateStyles() {
-        for(Stage stage: activeStages) {
-            Scene scene = stage.getScene();
-            scene.getStylesheets().clear();
-        }
-    }
-
-    public void closeStage(Stage stageToClose) {
-        stageToClose.close();
-        activeStages.remove(stageToClose);
     }
 }
 
