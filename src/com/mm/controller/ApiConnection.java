@@ -25,14 +25,20 @@ public class ApiConnection {
             }
             in.close();
 
+        } else if(responseCode == 401){
+            System.out.println("401");
+            return "[]";
         } else {
             System.out.println("GET request not worked");
+            return "GET request not worked";
         }
         String cityKey = "";
 
         if(GET_URL.contains("Key")) {
-            for(int i = 21; i < 27; i++) {
-                cityKey += response.toString().charAt(i);
+            if(!response.toString().equals("[]")){
+                for(int i = 21; i < 27; i++) {
+                    cityKey += response.toString().charAt(i);
+                }
             }
             return cityKey;
         }
