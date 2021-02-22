@@ -3,6 +3,7 @@ package com.mm.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mm.view.ViewFactory;
+import com.mm.Config;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -243,11 +244,9 @@ public class MainWindowController extends AbstractController implements Initiali
             // connect with API
             result = showAllData(queryFirstCity);
             if(result == "GET request not worked") {
-                System.out.println("not worked");
                 commentFirstCity.setText("Wyczerpałeś limit wyszukań");
             }
             else if(result == "[]") {
-                System.out.println("Empty table");
                 commentFirstCity.setText("Nie znaleziono miasta");
             }
             else {
@@ -268,7 +267,6 @@ public class MainWindowController extends AbstractController implements Initiali
                     }
                     bufferedWriter.close();
                 } catch ( IOException e) {
-                    System.out.println("Problem with file cities.txt");
                 }
             }
         }
@@ -285,11 +283,9 @@ public class MainWindowController extends AbstractController implements Initiali
         if(!querySecondCity.equals("")) {
             result = showAllData(querySecondCity);
             if(result == "GET request not worked") {
-                System.out.println("not worked");
                 commentSecondCity.setText("Wyczerpałeś limit wyszukań");
             }
             else if(result == "[]") {
-                System.out.println("Empty table");
                 commentSecondCity.setText("Nie znaleziono miasta");
             }
             else {
@@ -310,7 +306,6 @@ public class MainWindowController extends AbstractController implements Initiali
                     bufferedWriter.write(flagSecondCity.getText());
                     bufferedWriter.close();
                 } catch ( IOException e) {
-                    System.out.println("Problem with file cities.txt");
                 }
             }
         }
@@ -364,8 +359,10 @@ public class MainWindowController extends AbstractController implements Initiali
     private String showAllData(String query) throws IOException {
         String queryEncoding = URLEncoder.encode(query, "UTF-8");
         ApiConnection api = new ApiConnection();
-        cityKey = api.sendGET("http://dataservice.accuweather.com/locations/v1/cities/search?apikey=MKl30gDCP4lhvUBSSGvGJq3EL4LkuZwI&q=" + queryEncoding + "&language=pl-PL&details=Key");
-        return api.sendGET("http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cityKey + "?apikey=MKl30gDCP4lhvUBSSGvGJq3EL4LkuZwI&language=pl-PL");
+        Config config = new Config();
+        String apiKey = config.getApiKey();
+        cityKey = api.sendGET("http://dataservice.accuweather.com/locations/v1/cities/search?apikey=" + apiKey + "=" + queryEncoding + "&language=pl-PL&details=Key");
+        return api.sendGET("http://dataservice.accuweather.com/forecasts/v1/daily/5day/" + cityKey + "?apikey=" + apiKey + "&language=pl-PL");
     }
 
     private void clearDataFromMainWindow(String city) {
