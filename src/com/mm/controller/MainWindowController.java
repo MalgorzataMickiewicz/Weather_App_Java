@@ -25,6 +25,7 @@ public class MainWindowController extends AbstractController implements Initiali
     private String secondCityAdd = "";
     private String cityKey = "";
     private String result = "";
+    private String tableOfIcons [] = new String [40];
 
     public MainWindowController(ViewFactory viewFactory, String fxmlName) {
         super(viewFactory, fxmlName);
@@ -241,7 +242,6 @@ public class MainWindowController extends AbstractController implements Initiali
         clearDataFromMainWindow(city);
 
         if(!queryFirstCity.equals("")) {
-            // connect with API
             result = showAllData(queryFirstCity);
             if(result == "GET request not worked") {
                 commentFirstCity.setText("Wyczerpałeś limit wyszukań");
@@ -252,7 +252,6 @@ public class MainWindowController extends AbstractController implements Initiali
             else {
                 editApiResult(result, city);
                 flagFirstCity.setText(queryFirstCity);
-                // add cities to file
                 try {
                     String path = "src/com/mm/model/cities";
                     FileWriter fileWriter = new FileWriter(path, false);
@@ -291,7 +290,6 @@ public class MainWindowController extends AbstractController implements Initiali
             else {
                 editApiResult(result, city);
                 flagSecondCity.setText(querySecondCity);
-                // add cities to file
                 try {
                     String path = "src/com/mm/model/cities";
                     FileWriter fileWriter = new FileWriter(path, false);
@@ -367,92 +365,178 @@ public class MainWindowController extends AbstractController implements Initiali
 
     private void clearDataFromMainWindow(String city) {
         if(city.equals("First")) {
-            // Maximum temperature
-            temperatureFirst1.setText("");
-            temperatureFirst2.setText("");
-            temperatureFirst3.setText("");
-            temperatureFirst4.setText("");
-            temperatureFirst5.setText("");
-            // Minimum temperature
-            temperatureFirst12.setText("");
-            temperatureFirst22.setText("");
-            temperatureFirst32.setText("");
-            temperatureFirst42.setText("");
-            temperatureFirst52.setText("");
-            // Day description
-            descriptionFirst1.setText("");
-            descriptionFirst2.setText("");
-            descriptionFirst3.setText("");
-            descriptionFirst4.setText("");
-            descriptionFirst5.setText("");
-            // Night description
-            descriptionFirst12.setText("");
-            descriptionFirst22.setText("");
-            descriptionFirst32.setText("");
-            descriptionFirst42.setText("");
-            descriptionFirst52.setText("");
-
-            ImageView imageView;
-            // Day Icon
-            imageView = new ImageView(getClass().getResource("weathericons/0.png").toExternalForm());
-            imageFirst1.setGraphic(imageView);
-            imageFirst2.setGraphic(imageView);
-            imageFirst3.setGraphic(imageView);
-            imageFirst4.setGraphic(imageView);
-            imageFirst5.setGraphic(imageView);
-            // Night Icon
-            imageFirst12.setGraphic(imageView);
-            imageFirst22.setGraphic(imageView);
-            imageFirst32.setGraphic(imageView);
-            imageFirst42.setGraphic(imageView);
-            imageFirst52.setGraphic(imageView);
+            clearTemperatureFirstCity();
+            clearDescriptionFirstCity();
+            clearImageIconsFirstCity();
         }
         else if(city.equals("Second")) {
-            // Maximum temperature
-            temperatureSecond1.setText("");
-            temperatureSecond2.setText("");
-            temperatureSecond3.setText("");
-            temperatureSecond4.setText("");
-            temperatureSecond5.setText("");
-            // Minimum temperature
-            temperatureSecond12.setText("");
-            temperatureSecond22.setText("");
-            temperatureSecond32.setText("");
-            temperatureSecond42.setText("");
-            temperatureSecond52.setText("");
-            // Day description
-            descriptionSecond1.setText("");
-            descriptionSecond2.setText("");
-            descriptionSecond3.setText("");
-            descriptionSecond4.setText("");
-            descriptionSecond5.setText("");
-            // Night description
-            descriptionSecond12.setText("");
-            descriptionSecond22.setText("");
-            descriptionSecond32.setText("");
-            descriptionSecond42.setText("");
-            descriptionSecond52.setText("");
-
-            ImageView imageView;
-            // Day Icon
-            imageView = new ImageView(getClass().getResource("weathericons/0.png").toExternalForm());
-            imageSecond1.setGraphic(imageView);
-            imageSecond2.setGraphic(imageView);
-            imageSecond3.setGraphic(imageView);
-            imageSecond4.setGraphic(imageView);
-            imageSecond5.setGraphic(imageView);
-            // Night Icon
-            imageSecond12.setGraphic(imageView);
-            imageSecond22.setGraphic(imageView);
-            imageSecond32.setGraphic(imageView);
-            imageSecond42.setGraphic(imageView);
-            imageSecond52.setGraphic(imageView);
+            clearTemperatureSecondCity();
+            clearDescriptionSecondCity();
+            clearImageIconsSecondCity();
         }
     }
 
-    private void editApiResult(String result, String city) {
+    private void clearImageIconsSecondCity() {
+        ImageView imageView;
+        imageView = new ImageView(getClass().getResource("weathericons/0.png").toExternalForm());
+        imageSecond1.setGraphic(imageView);
+        imageSecond2.setGraphic(imageView);
+        imageSecond3.setGraphic(imageView);
+        imageSecond4.setGraphic(imageView);
+        imageSecond5.setGraphic(imageView);
+        imageSecond12.setGraphic(imageView);
+        imageSecond22.setGraphic(imageView);
+        imageSecond32.setGraphic(imageView);
+        imageSecond42.setGraphic(imageView);
+        imageSecond52.setGraphic(imageView);
+    }
 
-        String tableOfIcons [] = new String [40];
+    private void clearDescriptionSecondCity() {
+        descriptionSecond1.setText("");
+        descriptionSecond2.setText("");
+        descriptionSecond3.setText("");
+        descriptionSecond4.setText("");
+        descriptionSecond5.setText("");
+        descriptionSecond12.setText("");
+        descriptionSecond22.setText("");
+        descriptionSecond32.setText("");
+        descriptionSecond42.setText("");
+        descriptionSecond52.setText("");
+    }
+
+    private void clearTemperatureSecondCity() {
+        temperatureSecond1.setText("");
+        temperatureSecond2.setText("");
+        temperatureSecond3.setText("");
+        temperatureSecond4.setText("");
+        temperatureSecond5.setText("");
+        temperatureSecond12.setText("");
+        temperatureSecond22.setText("");
+        temperatureSecond32.setText("");
+        temperatureSecond42.setText("");
+        temperatureSecond52.setText("");
+    }
+
+    private void clearImageIconsFirstCity() {
+        ImageView imageView;
+        imageView = new ImageView(getClass().getResource("weathericons/0.png").toExternalForm());
+        imageFirst1.setGraphic(imageView);
+        imageFirst2.setGraphic(imageView);
+        imageFirst3.setGraphic(imageView);
+        imageFirst4.setGraphic(imageView);
+        imageFirst5.setGraphic(imageView);
+        imageFirst12.setGraphic(imageView);
+        imageFirst22.setGraphic(imageView);
+        imageFirst32.setGraphic(imageView);
+        imageFirst42.setGraphic(imageView);
+        imageFirst52.setGraphic(imageView);
+    }
+
+    private void clearDescriptionFirstCity() {
+        descriptionFirst1.setText("");
+        descriptionFirst2.setText("");
+        descriptionFirst3.setText("");
+        descriptionFirst4.setText("");
+        descriptionFirst5.setText("");
+        descriptionFirst12.setText("");
+        descriptionFirst22.setText("");
+        descriptionFirst32.setText("");
+        descriptionFirst42.setText("");
+        descriptionFirst52.setText("");
+    }
+
+    private void clearTemperatureFirstCity() {
+        temperatureFirst1.setText("");
+        temperatureFirst2.setText("");
+        temperatureFirst3.setText("");
+        temperatureFirst4.setText("");
+        temperatureFirst5.setText("");
+        temperatureFirst12.setText("");
+        temperatureFirst22.setText("");
+        temperatureFirst32.setText("");
+        temperatureFirst42.setText("");
+        temperatureFirst52.setText("");
+    }
+
+
+
+    private void editApiResult(String result, String city) {
+        addValuesToTableOfIcons();
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            String tableTemperatureMinimum [] = new String[5];
+            String tableTemperatureMaximum [] = new String[5];
+            String tableDescriptionDay [] = new String[5];
+            String tableDescriptionNight [] = new String[5];
+            String tableIconNight [] = new String[5];
+            String tableIconDay [] = new String[5];
+
+            JsonNode jsonNode = objectMapper.readValue(result, JsonNode.class);
+            JsonNode object = jsonNode.get("DailyForecasts");
+            for(int i = 0; i < 5; i++) {
+                JsonNode array = object.get(i);
+                JsonNode temperature = array.get("Temperature");
+                JsonNode temperatureMinimumObject = temperature.get("Minimum");
+                JsonNode temperatureMinimumNode = temperatureMinimumObject.get("Value");
+                String temperatureMinimumString = temperatureMinimumNode.toString();
+                float temperatureMinimumFloat = (float) ((Float.valueOf(temperatureMinimumString))-32/1.8);
+                int temperatureMinimumFloatRound = Math.round(temperatureMinimumFloat);
+                tableTemperatureMinimum[i] = String.valueOf(temperatureMinimumFloatRound);
+                JsonNode temperatureMaximumObject = temperature.get("Maximum");
+                JsonNode temperatureMaximumNode = temperatureMaximumObject.get("Value");
+                String temperatureMaximumString = temperatureMaximumNode.toString();
+                float temperatureMaximumFloat = (float) ((Float.valueOf(temperatureMaximumString))-32/1.8);
+                int temperatureMaximumFloatRound = Math.round(temperatureMaximumFloat);
+                tableTemperatureMaximum[i] = String.valueOf(temperatureMaximumFloatRound);
+                JsonNode day = array.get("Day");
+                JsonNode dayDescriptionObject = day.get("IconPhrase");
+                String dayDescriptionString = (dayDescriptionObject.toString()).replace("\"", "");
+                tableDescriptionDay[i] = dayDescriptionString;
+                JsonNode dayIconObject = day.get("Icon");
+                String dayIconString = dayIconObject.toString();
+                tableIconDay[i] = dayIconString;
+                JsonNode night = array.get("Night");
+                JsonNode nightDescriptionObject = night.get("IconPhrase");
+                String nightDescriptionString = (nightDescriptionObject.toString()).replace("\"", "");
+                tableDescriptionNight[i] = nightDescriptionString;
+                JsonNode nightIconObject = night.get("Icon");
+                String nightIconString = nightIconObject.toString();
+                tableIconNight[i] = nightIconString;
+            }
+            String tableOfIconReusltDay [] = new String[5];
+            for(int j = 0; j < 5; j++) {
+                for(int k = 0; k < 40; k++){
+                    if(tableIconDay[j].equals(tableOfIcons[k])) {
+                        tableOfIconReusltDay[j] = tableOfIcons[k];
+                        break;
+                    }
+                }
+            }
+            String tableOfIconReusltNight [] = new String[5];
+            for(int j = 0; j < 5; j++) {
+                for(int k = 0; k < 40; k++){
+                    if(tableIconNight[j].equals(tableOfIcons[k])) {
+                        tableOfIconReusltNight[j] = tableOfIcons[k];
+                        break;
+                    }
+                }
+            }
+            if(city.equals("First")) {
+                addTemperaturesToFirstCity(tableTemperatureMaximum, tableTemperatureMinimum);
+                addDescriptionsToFirstCity(tableDescriptionDay, tableDescriptionNight);
+                addIconsToFirstCity(tableOfIconReusltDay, tableOfIconReusltNight);
+            }
+            else if(city.equals("Second")){
+                addTemperaturesToSecondCity(tableTemperatureMaximum, tableTemperatureMinimum);
+                addDescriptionsToSecondCity(tableDescriptionDay, tableDescriptionNight);
+                addIconsToSecondCity(tableOfIconReusltDay, tableOfIconReusltNight);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addValuesToTableOfIcons() {
         tableOfIcons[0] = "1";
         tableOfIcons[1] = "2";
         tableOfIcons[2] = "3";
@@ -493,110 +577,14 @@ public class MainWindowController extends AbstractController implements Initiali
         tableOfIcons[37] = "42";
         tableOfIcons[38] = "43";
         tableOfIcons[39] = "44";
-
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        try {
-            String tableTemperatureMinimum [] = new String[5];
-            String tableTemperatureMaximum [] = new String[5];
-            String tableDescriptionDay [] = new String[5];
-            String tableDescriptionNight [] = new String[5];
-            String tableIconNight [] = new String[5];
-            String tableIconDay [] = new String[5];
-
-            JsonNode jsonNode = objectMapper.readValue(result, JsonNode.class);
-            // Object
-            JsonNode object = jsonNode.get("DailyForecasts");
-            // Object in nestObject: Temperature
-            for(int i = 0; i < 5; i++) {
-                JsonNode array = object.get(i);
-                // Value of object
-                JsonNode temperature = array.get("Temperature");
-                // Temperature minimum
-                JsonNode temperatureMinimumObject = temperature.get("Minimum");
-                JsonNode temperatureMinimumNode = temperatureMinimumObject.get("Value");
-                String temperatureMinimumString = temperatureMinimumNode.toString();
-                float temperatureMinimumFloat = (float) ((Float.valueOf(temperatureMinimumString))-32/1.8);
-                int temperatureMinimumFloatRound = Math.round(temperatureMinimumFloat);
-                tableTemperatureMinimum[i] = String.valueOf(temperatureMinimumFloatRound);
-                //Temperature maximum
-                JsonNode temperatureMaximumObject = temperature.get("Maximum");
-                JsonNode temperatureMaximumNode = temperatureMaximumObject.get("Value");
-                String temperatureMaximumString = temperatureMaximumNode.toString();
-                float temperatureMaximumFloat = (float) ((Float.valueOf(temperatureMaximumString))-32/1.8);
-                int temperatureMaximumFloatRound = Math.round(temperatureMaximumFloat);
-                tableTemperatureMaximum[i] = String.valueOf(temperatureMaximumFloatRound);
-                // Day description
-                // Value of object
-                JsonNode day = array.get("Day");
-                JsonNode dayDescriptionObject = day.get("IconPhrase");
-                String dayDescriptionString = (dayDescriptionObject.toString()).replace("\"", "");
-                tableDescriptionDay[i] = dayDescriptionString;
-                // Icon number
-                JsonNode dayIconObject = day.get("Icon");
-                String dayIconString = dayIconObject.toString();
-                tableIconDay[i] = dayIconString;
-                // Night description
-                // Value of object
-                JsonNode night = array.get("Night");
-                JsonNode nightDescriptionObject = night.get("IconPhrase");
-                String nightDescriptionString = (nightDescriptionObject.toString()).replace("\"", "");
-                tableDescriptionNight[i] = nightDescriptionString;
-                // Icon number
-                JsonNode nightIconObject = night.get("Icon");
-                String nightIconString = nightIconObject.toString();
-                tableIconNight[i] = nightIconString;
-            }
-            // Day Icon
-            String tableOfIconReusltDay [] = new String[5];
-            for(int j = 0; j < 5; j++) {
-                for(int k = 0; k < 40; k++){
-                    if(tableIconDay[j].equals(tableOfIcons[k])) {
-                        tableOfIconReusltDay[j] = tableOfIcons[k];
-                        break;
-                    }
-                }
-            }
-            // Night Icon
-            String tableOfIconReusltNight [] = new String[5];
-            for(int j = 0; j < 5; j++) {
-                for(int k = 0; k < 40; k++){
-                    if(tableIconNight[j].equals(tableOfIcons[k])) {
-                        tableOfIconReusltNight[j] = tableOfIcons[k];
-                        break;
-                    }
-                }
-            }
-            // add values to fields
-            if(city.equals("First")) {
-                // add temperatures max and min to fields
-                addTemperaturesToFirstCity(tableTemperatureMaximum, tableTemperatureMinimum);
-                // add description day and night to fields
-                addDescriptionsToFirstCity(tableDescriptionDay, tableDescriptionNight);
-                // add icons day and night to fields
-                addIconsToFirstCity(tableOfIconReusltDay, tableOfIconReusltNight);
-            }
-            else if(city.equals("Second")){
-                // add temperatures max i min to fields
-                addTemperaturesToSecondCity(tableTemperatureMaximum, tableTemperatureMinimum);
-                // add description day and night to fields
-                addDescriptionsToSecondCity(tableDescriptionDay, tableDescriptionNight);
-                // add icons day and night to fields
-                addIconsToSecondCity(tableOfIconReusltDay, tableOfIconReusltNight);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void addTemperaturesToFirstCity(String[] tableTemperatureMaximum, String[] tableTemperatureMinimum) {
-        // Maximum temperature
         temperatureFirst1.setText(tableTemperatureMaximum[0] + "°C");
         temperatureFirst2.setText(tableTemperatureMaximum[1] + "°C");
         temperatureFirst3.setText(tableTemperatureMaximum[2] + "°C");
         temperatureFirst4.setText(tableTemperatureMaximum[3] + "°C");
         temperatureFirst5.setText(tableTemperatureMaximum[4] + "°C");
-        // Minimum temperature
         temperatureFirst12.setText(tableTemperatureMinimum[0] + "°C");
         temperatureFirst22.setText(tableTemperatureMinimum[1] + "°C");
         temperatureFirst32.setText(tableTemperatureMinimum[2] + "°C");
@@ -605,13 +593,11 @@ public class MainWindowController extends AbstractController implements Initiali
     }
 
     private void addTemperaturesToSecondCity(String[] tableTemperatureMaximum, String[] tableTemperatureMinimum) {
-        // Maximum temperature
         temperatureSecond1.setText(tableTemperatureMaximum[0] + "°C");
         temperatureSecond2.setText(tableTemperatureMaximum[1] + "°C");
         temperatureSecond3.setText(tableTemperatureMaximum[2] + "°C");
         temperatureSecond4.setText(tableTemperatureMaximum[3] + "°C");
         temperatureSecond5.setText(tableTemperatureMaximum[4] + "°C");
-        // Minimum temperature
         temperatureSecond12.setText(tableTemperatureMinimum[0] + "°C");
         temperatureSecond22.setText(tableTemperatureMinimum[1] + "°C");
         temperatureSecond32.setText(tableTemperatureMinimum[2] + "°C");
@@ -620,13 +606,11 @@ public class MainWindowController extends AbstractController implements Initiali
     }
 
     private void addDescriptionsToFirstCity(String[] tableDescriptionDay, String[] tableDescriptionNight) {
-        // Day description
         descriptionFirst1.setText(tableDescriptionDay[0]);
         descriptionFirst2.setText(tableDescriptionDay[1]);
         descriptionFirst3.setText(tableDescriptionDay[2]);
         descriptionFirst4.setText(tableDescriptionDay[3]);
         descriptionFirst5.setText(tableDescriptionDay[4]);
-        // Night description
         descriptionFirst12.setText(tableDescriptionNight[0]);
         descriptionFirst22.setText(tableDescriptionNight[1]);
         descriptionFirst32.setText(tableDescriptionNight[2]);
@@ -635,13 +619,11 @@ public class MainWindowController extends AbstractController implements Initiali
     }
 
     private void addDescriptionsToSecondCity(String[] tableDescriptionDay, String[] tableDescriptionNight) {
-        // Day description
         descriptionSecond1.setText(tableDescriptionDay[0]);
         descriptionSecond2.setText(tableDescriptionDay[1]);
         descriptionSecond3.setText(tableDescriptionDay[2]);
         descriptionSecond4.setText(tableDescriptionDay[3]);
         descriptionSecond5.setText(tableDescriptionDay[4]);
-        // Night description
         descriptionSecond12.setText(tableDescriptionNight[0]);
         descriptionSecond22.setText(tableDescriptionNight[1]);
         descriptionSecond32.setText(tableDescriptionNight[2]);
@@ -651,7 +633,6 @@ public class MainWindowController extends AbstractController implements Initiali
 
     private void addIconsToFirstCity(String[] tableOfIconReusltDay, String[] tableOfIconReusltNight) {
         ImageView imageView;
-        // Day Icon
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[0] + ".png").toExternalForm());
         imageFirst1.setGraphic(imageView);
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[1] + ".png").toExternalForm());
@@ -662,7 +643,6 @@ public class MainWindowController extends AbstractController implements Initiali
         imageFirst4.setGraphic(imageView);
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[4] + ".png").toExternalForm());
         imageFirst5.setGraphic(imageView);
-        // Night Icon
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[0] + ".png").toExternalForm());
         imageFirst12.setGraphic(imageView);
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[1] + ".png").toExternalForm());
@@ -677,7 +657,6 @@ public class MainWindowController extends AbstractController implements Initiali
 
     private void addIconsToSecondCity(String[] tableOfIconReusltDay, String[] tableOfIconReusltNight) {
         ImageView imageView;
-        // Day Icon
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[0] + ".png").toExternalForm());
         imageSecond1.setGraphic(imageView);
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[1] + ".png").toExternalForm());
@@ -688,7 +667,6 @@ public class MainWindowController extends AbstractController implements Initiali
         imageSecond4.setGraphic(imageView);
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltDay[4] + ".png").toExternalForm());
         imageSecond5.setGraphic(imageView);
-        // Night Icon
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[0] + ".png").toExternalForm());
         imageSecond12.setGraphic(imageView);
         imageView = new ImageView(getClass().getResource("weathericons/" + tableOfIconReusltNight[1] + ".png").toExternalForm());
